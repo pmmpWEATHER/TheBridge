@@ -42,11 +42,11 @@ class Main extends PluginBase implements Listener {
 	public $data = [
 	"arenas" => [],
 	"lasthit" => [],
-	"prefix" => TextFormat::YELLOW . "[TheBridge]"];
+	"prefix" => TextFormat::YELLOW . "[Manhunt]"];
 	
 	public function onEnable(){
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$this->getLogger()->info(TextFormat::GREEN . "The Bridge Enable");
+		$this->getLogger()->info(TextFormat::GREEN . "Manhunt Enable");
 		Entity::registerEntity(EntityJoin::class, true);
 		@mkdir($this->getDataFolder());
 		@mkdir($this->getDataFolder() . "arenas");
@@ -296,10 +296,10 @@ class Main extends PluginBase implements Listener {
 		$pk->formId = 5412;
 		$data = [
 		"type" => "modal",
-		"title" => TextFormat::GRAY . "¿Salir de la arena?",
-		"content" => TextFormat::RED . "¿Quieres salir de la arena?.",
-		"button1" => TextFormat::DARK_RED . TextFormat::BOLD . "Salir de la arena",
-		"button2" => TextFormat::YELLOW . TextFormat::BOLD . "Cancelar"];
+		"title" => TextFormat::GRAY . "¿Quit Arena?",
+		"content" => TextFormat::RED . "¿Arena quitting options?.",
+		"button1" => TextFormat::DARK_RED . TextFormat::BOLD . "Quit Arena",
+		"button2" => TextFormat::YELLOW . TextFormat::BOLD . "Cancel"];
 		$pk->formData = json_encode($data, JSON_PRETTY_PRINT | JSON_BIGINT_AS_STRING | JSON_UNESCAPED_UNICODE);
 		$player->dataPacket($pk);
 	}
